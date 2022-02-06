@@ -5,13 +5,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.Min;
 
 @Entity
+@Table(name = "productos")
 public class Producto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	
 	@Column(nullable = false, length = 50)
 	private String nombre;
@@ -24,6 +28,27 @@ public class Producto {
 	
 	@Column(nullable = false)
 	private Float precio;
+
+	@Column(nullable = false)
+	private Integer cantidad;
+
+	
+	
+	public Integer getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(Integer cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 
 	public Long getId() {
 		return id;

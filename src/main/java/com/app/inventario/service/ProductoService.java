@@ -17,7 +17,10 @@ public class ProductoService implements IProductoService {
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<Producto> findAll() {
+	public List<Producto> listAll(String palabra) {
+		if (palabra != null) {
+			return productoRepository.findAll(palabra);
+		}
 		return productoRepository.findAll();
 	}
 

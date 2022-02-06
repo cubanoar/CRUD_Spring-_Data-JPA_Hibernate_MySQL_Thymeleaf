@@ -6,7 +6,7 @@ import com.app.inventario.entity.Producto;
 
 public interface IProductoService {
 	
-	public List<Producto> findAll();
+	public List<Producto> listAll(String palabra);
 	
 	public void save(Producto producto);
 	
